@@ -1,6 +1,6 @@
 {
 	"name": "nanonets",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "NanoNets' Optical Character Recognition and Image Classification Node.js SDK.",
 	"main": "index.js",
 	"exports": {
@@ -21,7 +21,7 @@
 		"sdk",
 		"ocr",
 		"image-classification",
-		"nodejs"
+		"optical-character-recognition"
 	],
 	"author": "Harsh Kapadia <harshgkapadia@gmail.com>",
 	"license": "MIT",
@@ -30,6 +30,7 @@
 	},
 	"homepage": "https://github.com/HarshKapadia2/nanonets#readme",
 	"dependencies": {
+		"form-data": "^4.0.0",
 		"node-fetch": "^3.0.0"
 	}
 }

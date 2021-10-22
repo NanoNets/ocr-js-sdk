@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import FormData from "form-data";
 
 if (!globalThis.fetch) {
 	globalThis.fetch = fetch;
@@ -62,7 +63,6 @@ export class OpticalCharacterRecognition {
 		for (let i = 0; i < urlArray.length; i++) {
 			encodedUrls.append("urls", urlArray[i]);
 		}
-		encodedUrls = encodedUrls.toString();
 
 		const response = await fetch(
 			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelUrls`,
@@ -86,7 +86,6 @@ export class OpticalCharacterRecognition {
 		for (let i = 0; i < urlArray.length; i++) {
 			encodedUrls.append("urls", urlArray[i]);
 		}
-		encodedUrls = encodedUrls.toString();
 
 		const response = await fetch(
 			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelUrls/?async=true`,
@@ -98,6 +97,115 @@ export class OpticalCharacterRecognition {
 					"Accept": "application/json"
 				},
 				body: encodedUrls
+			}
+		);
+		const data = response.json();
+
+		return data;
+	}
+
+	async predictUsingFile(file) {
+		const formData = new FormData();
+		formData.append("file", file);
+
+		const response = await fetch(
+			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelFile`,
+			{
+				method: "POST",
+				headers: {
+					"Authorization": this.authHeaderVal,
+					"Accept": "application/json"
+				},
+				body: formData
+			}
+		);
+		const data = response.json();
+
+		return data;
+	}
+
+	async predictUsingFileAsync(file) {
+		const formData = new FormData();
+		formData.append("file", file);
+
+		const response = await fetch(
+			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelFile/?async=true`,
+			{
+				method: "POST",
+				headers: {
+					"Authorization": this.authHeaderVal,
+					"Accept": "application/json"
+				},
+				body: formData
+			}
+		);
+		const data = response.json();
+
+		return data;
+	}
+}
+
+export class ImageClassification {
+	constructor(apiKey, modelId) {
+		this.apiKey = apiKey;
+		this.modelId = modelId;
+		this.authHeaderVal =
+			"Basic " + Buffer.from(`${this.apiKey}:`).toString("base64");
+	}
+
+	async getModelDetails() {
+		const response = await fetch(
+			`https://app.nanonets.com/api/v2/ImageCategorization/Model/?modelId=${this.modelId}`,
+			{
+				headers: {
+					"Authorization": this.authHeaderVal,
+					"Accept": "application/json"
+				}
+			}
+		);
+		const data = response.json();
+
+		return data;
+	}
+
+	async predictUsingUrls(urlArray) {
+		let encodedData = new URLSearchParams();
+		for (let i = 0; i < urlArray.length; i++) {
+			encodedData.append("urls", urlArray[i]);
+		}
+		encodedData.append("modelId", this.modelId);
+
+		const response = await fetch(
+			`https://app.nanonets.com/api/v2/ImageCategorization/LabelUrls`,
+			{
+				method: "POST",
+				headers: {
+					"Authorization": this.authHeaderVal,
+					"Content-Type": "application/x-www-form-urlencoded",
+					"Accept": "application/json"
+				},
+				body: encodedData
+			}
+		);
+		const data = response.json();
+
+		return data;
+	}
+
+	async predictUsingFile(file) {
+		const formData = new FormData();
+		formData.append("file", file);
+		formData.append("modelId", this.modelId);
+
+		const response = await fetch(
+			`https://app.nanonets.com/api/v2/ImageCategorization/LabelFile`,
+			{
+				method: "POST",
+				headers: {
+					"Authorization": this.authHeaderVal,
+					"Accept": "application/json"
+				},
+				body: formData
 			}
 		);
 		const data = response.json();
