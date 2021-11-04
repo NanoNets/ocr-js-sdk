@@ -1,3 +1,4 @@
+import { createReadStream } from "fs";
 import fetch from "node-fetch";
 import FormData from "form-data";
 
@@ -104,9 +105,11 @@ export class OpticalCharacterRecognition {
 		return data;
 	}
 
-	async predictUsingFile(file) {
+	async predictUsingFile(filePath) {
+		const fileStream = createReadStream(filePath);
+
 		const formData = new FormData();
-		formData.append("file", file);
+		formData.append("file", fileStream);
 
 		const response = await fetch(
 			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelFile`,
@@ -124,9 +127,11 @@ export class OpticalCharacterRecognition {
 		return data;
 	}
 
-	async predictUsingFileAsync(file) {
+	async predictUsingFileAsync(filePath) {
+		const fileStream = createReadStream(filePath);
+
 		const formData = new FormData();
-		formData.append("file", file);
+		formData.append("file", fileStream);
 
 		const response = await fetch(
 			`https://app.nanonets.com/api/v2/OCR/Model/${this.modelId}/LabelFile/?async=true`,
@@ -192,9 +197,11 @@ export class ImageClassification {
 		return data;
 	}
 
-	async predictUsingFile(file) {
+	async predictUsingFile(filePath) {
+		const fileStream = createReadStream(filePath);
+
 		const formData = new FormData();
-		formData.append("file", file);
+		formData.append("file", fileStream);
 		formData.append("modelId", this.modelId);
 
 		const response = await fetch(
