@@ -47,6 +47,15 @@ const ic = new ImageClassification(apiKey, modelId);
 
 ## Optical Character Recognition API
 
+### Table of Contents
+
+-   [Class Instantiation (Constructor)](#class-instantiation-constructor)
+-   [Get Model Details](#get-model-details)
+-   [Get All Predicted File Data](#get-all-predicted-file-data)
+-   [Get Predicted File Data](#get-predicted-file-data)
+-   [Predict Using URLs](#predict-using-urls)
+-   [Predict Using File](#predict-using-file)
+
 ### Class Instantiation (Constructor)
 
 ```javascript
@@ -64,6 +73,7 @@ const ocr = new OpticalCharacterRecognition(apiKey, modelId);
 
 > NOTE:
 >
+> -   Class Instantiation is mandatory.
 > -   The API Key can be found in the user's [NanoNets Account section](https://app.nanonets.com/#/keys) and Model ID can be found in the model's settings in the NanoNets web app.
 > -   API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
 >     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, Flutter, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
@@ -146,6 +156,13 @@ await ocr.predictUsingFile(filePath, isAsync);
 
 ## Image Classification API
 
+### Table of Contents
+
+-   [Class Instantiation (Constructor)](#class-instantiation-constructor-1)
+-   [Get Model Details](#get-model-details-1)
+-   [Predict Using URLs](#predict-using-urls-1)
+-   [Predict Using File](#predict-using-file-1)
+
 ### Class Instantiation (Constructor)
 
 ```javascript
@@ -163,6 +180,7 @@ const ic = new ImageClassification(apiKey, modelId);
 
 > NOTE:
 >
+> -   Class Instantiation is mandatory.
 > -   The API Key can be found in the user's [NanoNets Account section](https://app.nanonets.com/#/keys) and Model ID can be found in the model's settings in the NanoNets web app.
 > -   API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
 >     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, Flutter, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.

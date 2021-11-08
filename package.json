@@ -1,6 +1,6 @@
 {
 	"name": "nanonets",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "NanoNets' Optical Character Recognition and Image Classification Node.js SDK.",
 	"main": "index.js",
 	"exports": {
