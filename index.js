@@ -73,7 +73,7 @@ export class OpticalCharacterRecognition {
 		return data;
 	}
 
-	async getPredictedFileDataById(fileId) {
+	async getPredictedFileData(fileId) {
 		if (!fileId)
 			throw new Error(
 				"NanoNets SDK Optical Character Recognition getPredictedFileDataById() Error: File ID parameter not passed."
