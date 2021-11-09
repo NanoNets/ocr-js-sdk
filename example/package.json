@@ -1,0 +1,35 @@
+{
+	"name": "nanonets-sdk-example",
+	"version": "1.0.0",
+	"description": "An example using NanoNets' Node.js SDK.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/HarshKapadia2/nanonets-sdk-example.git"
+	},
+	"keywords": [
+		"nanonets",
+		"nodejs",
+		"sdk",
+		"ocr",
+		"image-classification"
+	],
+	"author": "Harsh Kapadia <harshgkapadia@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/HarshKapadia2/nanonets-sdk-example/issues"
+	},
+	"homepage": "https://github.com/HarshKapadia2/nanonets-sdk-example#readme",
+	"dependencies": {
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"multer": "^1.4.3"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.13"
+	}
+}

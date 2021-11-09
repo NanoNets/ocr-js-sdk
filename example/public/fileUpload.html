@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<style>
+			body {
+				background-color: black;
+				color: #e0e0e0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				font-family: sans-serif;
+			}
+
+			form {
+				margin: 2em 0;
+			}
+
+			a {
+				color: #e0e0e0;
+			}
+		</style>
+
+		<title>NanoNets Node.js SDK Example</title>
+	</head>
+
+	<body>
+		<h1>NanoNets Node.js SDK Example</h1>
+		<h2>Optical Character Recognition and Image Classification</h2>
+		<h3>File Upload Example</h3>
+		<h4>Check server console for output</h4>
+
+		<form action="/uploadFile" method="POST" enctype="multipart/form-data">
+			<p>Select operation</p>
+			<input
+				type="radio"
+				id="ocr"
+				name="operation"
+				value="ocr"
+				required
+			/>
+			<label for="ocr">Optical Character Recognition</label>
+			<br />
+			<input
+				type="radio"
+				id="ocr-async"
+				name="operation"
+				value="ocr-async"
+				required
+			/>
+			<label for="ocr-async"
+				>Optical Character Recognition (Asynchronous)</label
+			>
+			<br />
+			<input type="radio" id="ic" name="operation" value="ic" required />
+			<label for="ic">Image Classification</label>
+			<br /><br /><br />
+
+			<input
+				type="file"
+				name="file"
+				id="file"
+				accept=".pdf, .png, .jpg, .jpeg"
+				required
+			/>
+			<br /><br /><br />
+
+			<button type="submit">Upload</button>
+		</form>
+
+		<a href="/">Home</a>
+	</body>
+</html>

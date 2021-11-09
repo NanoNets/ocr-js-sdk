@@ -1,12 +1,13 @@
 # nanonets
 
-[NanoNets](https://nanonets.com)' Optical Character Recognition and Image Classification Node.js SDK.
+The [NanoNets](https://nanonets.com) Optical Character Recognition and Image Classification Node.js SDK.
 
 > NOTE:
 >
+> -   This package supports both CommonJS and ES Module systems.
 > -   All API requests from the browser will fail due to CORS policies.
 > -   API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
->     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, Flutter, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
+>     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
 >     -   The API Key should only be known to the server code and all client requests to the API must go through a server.
 
 ## Installation
@@ -17,7 +18,7 @@ npm install nanonets
 
 ## Use the NanoNets SDK
 
-> An example to use this SDK can temporarily be found at https://github.com/HarshKapadia2/nanonets-sdk-example
+> NOTE: A fully working example using the SDK can be found in the [example](example) directory.
 
 1. Import/require the 'nanonets' package.
 
@@ -29,6 +30,11 @@ import { OpticalCharacterRecognition, ImageClassification } from "nanonets";
 const OpticalCharacterRecognition =
 	require("nanonets").OpticalCharacterRecognition;
 const ImageClassification = require("nanonets").ImageClassification;
+// OR
+const {
+	OpticalCharacterRecognition,
+	ImageClassification
+} = require("nanonets");
 ```
 
 2. Instantiate the Optical Character Recognition (OCR) and/or Image Classification (IC) class.
@@ -76,7 +82,7 @@ const ocr = new OpticalCharacterRecognition(apiKey, modelId);
 > -   Class Instantiation is mandatory.
 > -   The API Key can be found in the user's [NanoNets Account section](https://app.nanonets.com/#/keys) and Model ID can be found in the model's settings in the NanoNets web app.
 > -   API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
->     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, Flutter, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
+>     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
 >     -   The API Key should only be known to the server code and all client requests to the API must go through a server.
 
 ### Get Model Details
@@ -183,7 +189,7 @@ const ic = new ImageClassification(apiKey, modelId);
 > -   Class Instantiation is mandatory.
 > -   The API Key can be found in the user's [NanoNets Account section](https://app.nanonets.com/#/keys) and Model ID can be found in the model's settings in the NanoNets web app.
 > -   API Keys have full access to the user's account. **Please do not expose API Keys on the client.**
->     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, Flutter, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
+>     -   Please note that compiling, obfuscating, minifying or bundling (for example in React.js, Angular, Vue.js, React Native, etc.) **does not** hide the API Key and **it can still be extracted from the final application**.
 >     -   The API Key should only be known to the server code and all client requests to the API must go through a server.
 
 ### Get Model Details
