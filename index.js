@@ -1,10 +1,6 @@
 import { createReadStream } from "fs";
-import fetch from "node-fetch";
+import fetch from "node-fetch-3";
 import FormData from "form-data";
-
-if (!globalThis.fetch) {
-	globalThis.fetch = fetch;
-}
 
 export class OpticalCharacterRecognition {
 	constructor(apiKey, modelId) {
