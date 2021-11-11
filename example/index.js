@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import express from "express";
 import multer from "multer";
-import { ImageClassification, OpticalCharacterRecognition } from "../index.js";
+import OpticalCharacterRecognition from "../index.js";
 import dotenv from "dotenv";
 
 // Server initialization
@@ -21,24 +21,17 @@ app.use("/public", express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Class instantiations
+// Class instantiation
 // const ocr = new OpticalCharacterRecognition(
 // 	process.env.API_KEY_1,
 // 	process.env.MODEL_ID_1
-// );
-// const ic = new ImageClassification(
-// 	process.env.API_KEY_1,
-// 	process.env.MODEL_ID_2
 // );
 
 // Routes
 app.get("/", async (req, res) => {
 	// const ocrUrlArray = [process.env.FILE_URL_1, process.env.FILE_URL_2];
-	// const icUrlArray = [process.env.FILE_URL_3, process.env.FILE_URL_4];
 	// const startInterval = 18917;
 	// const endInterval = 18919;
-
-	// Optical Character Recognition (OCR) functions
 
 	// console.log(
 	// 	await ocr.getModelDetails(),
@@ -61,17 +54,6 @@ app.get("/", async (req, res) => {
 	// 	"\n-------------------------------------------------------\n"
 	// );
 
-	// Image Classification (IC) functions
-
-	// console.log(
-	// 	await ic.getModelDetails(),
-	// 	"\n-------------------------------------------------------\n"
-	// );
-	// console.log(
-	// 	await ic.predictUsingUrls(icUrlArray),
-	// 	"\n-------------------------------------------------------\n"
-	// );
-
 	res.sendFile(__dirname + "/public/index.html");
 });
 
@@ -90,11 +72,6 @@ app.post("/uploadFile", upload.single("file"), async (req, res) => {
 	else if (req.body.operation === "ocr-async")
 		console.log(
 			await ocr.predictUsingFile(req.file.path, true),
-			"\n-------------------------------------------------------\n"
-		);
-	else if (req.body.operation === "ic")
-		console.log(
-			await ic.predictUsingFile(req.file.path),
 			"\n-------------------------------------------------------\n"
 		);
 

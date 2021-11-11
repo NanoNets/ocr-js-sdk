@@ -1,4 +1,5 @@
 example/
 node_modules/
-.prettierrc
+.gitignore
 .prettierignore
+.prettierrc

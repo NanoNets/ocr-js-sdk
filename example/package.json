@@ -1,7 +1,7 @@
 {
-	"name": "nanonets-sdk-example",
+	"name": "nanonets-ocr-sdk-example",
 	"version": "1.0.0",
-	"description": "An example using NanoNets' Node.js SDK.",
+	"description": "An example using NanoNets' OCR Node.js SDK.",
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
@@ -9,21 +9,20 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/HarshKapadia2/nanonets-sdk-example.git"
+		"url": "git+https://github.com/NanoNets/ocr-js-sdk.git"
 	},
 	"keywords": [
 		"nanonets",
 		"nodejs",
 		"sdk",
-		"ocr",
-		"image-classification"
+		"ocr"
 	],
-	"author": "Harsh Kapadia <harshgkapadia@gmail.com>",
+	"author": "NanoNets <support@nanonets.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/HarshKapadia2/nanonets-sdk-example/issues"
+		"url": "https://github.com/NanoNets/ocr-js-sdk/issues"
 	},
-	"homepage": "https://github.com/HarshKapadia2/nanonets-sdk-example#readme",
+	"homepage": "https://github.com/NanoNets/ocr-js-sdk#readme",
 	"dependencies": {
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",

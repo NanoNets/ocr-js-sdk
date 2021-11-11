@@ -1,7 +1,7 @@
 {
-	"name": "nanonets",
+	"name": "@nanonets/optical-character-recognition",
 	"version": "1.0.0",
-	"description": "NanoNets' Optical Character Recognition and Image Classification Node.js SDK.",
+	"description": "NanoNets' Optical Character Recognition Node.js SDK.",
 	"main": "index.js",
 	"exports": {
 		"import": "./index.js",
@@ -14,21 +14,21 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NanoNets/js-sdk.git"
+		"url": "git+https://github.com/NanoNets/ocr-js-sdk.git"
 	},
 	"keywords": [
 		"nanonets",
 		"sdk",
+		"nodejs",
 		"ocr",
-		"image-classification",
 		"optical-character-recognition"
 	],
 	"author": "NanoNets <support@nanonets.com>",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/NanoNets/js-sdk/issues"
+		"url": "https://github.com/NanoNets/ocr-js-sdk/issues"
 	},
-	"homepage": "https://github.com/NanoNets/js-sdk#readme",
+	"homepage": "https://github.com/NanoNets/ocr-js-sdk#readme",
 	"dependencies": {
 		"form-data": "^4.0.0",
 		"node-fetch-2": "npm:node-fetch@^2.6.6",
