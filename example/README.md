@@ -1,6 +1,6 @@
 # NanoNets OCR SDK Example
 
-A sample web app that uses the [NanoNets](https://nanonets.com) Optical Character Recognition Node.js SDK.
+A sample web app that uses the [NanoNets Optical Character Recognition Node.js SDK](https://www.npmjs.com/package/@nanonets/optical-character-recognition).
 
 ## Usage Instructions
 

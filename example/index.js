@@ -2,7 +2,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import express from "express";
 import multer from "multer";
-import OpticalCharacterRecognition from "../index.js";
+import OpticalCharacterRecognition from "@nanonets/optical-character-recognition";
 import dotenv from "dotenv";
 
 // Server initialization
@@ -22,10 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Class instantiation
-// const ocr = new OpticalCharacterRecognition(
-// 	process.env.API_KEY_1,
-// 	process.env.MODEL_ID_1
-// );
+const ocr = new OpticalCharacterRecognition(
+	process.env.API_KEY_1,
+	process.env.MODEL_ID_1
+);
 
 // Routes
 app.get("/", async (req, res) => {
